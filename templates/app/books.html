@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    搜索：
+    <form action="/book/" method="post">
+        <input type="search" name="search">
+        <button>提交</button>
+    </form>
+</div>
+<br>
+<br>
+<div>
+    <a href="/insert/">添加图书</a>
+</div>
+<div>
+    <table border="lpx">
+        <tr>
+            <th>编号</th>
+            <th>书名</th>
+            <th>出版时间</th>
+            <th>阅读量</th>
+            <th>评论量</th>
+            <th>是否删除</th>
+        </tr>
+        {% for row in data %}
+            <tr>
+            <td>{{ row.id }}</td>
+            <td>{{ row.btitle }}</td>
+            <td>{{ row.bpub_date }}</td>
+            <td>{{ row.bread }}</td>
+            <td>{{ row.bcomment }}</td>
+            <td><a href="/delete/{{ row.id }}">删除</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>

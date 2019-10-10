@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <table border="plx">
+        <tr>
+            <th>编号</th>
+            <th>名字</th>
+            <th>简介</th>
+            <th>创建时间</th>
+        </tr>
+        {% for row in data %}
+            <tr>
+            <td>{{ row.id }}</td>
+            <td>{{ row.pname }}</td>
+            <td>{{ row.pcomment }}</td>
+            <td>{{ row.create_data }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>
